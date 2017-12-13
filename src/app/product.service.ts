@@ -13,12 +13,12 @@ export class ProductService {
 
   constructor(private _http: Http) { }
 
-  public getAlbum(id: number): Observable<Album> {
+  getAlbum(id: number): Observable<Album> {
       return this._http.get(this._albumUrl).map((response) => <Album>response.json());
   }
 
-  public getProducts(): Observable<Product[]> {
+  getProducts(): Observable<Product[]> {
     return this._http.get(this._productsUrl).map(response =>
-      <Product[]>response.json());
+    <Product[]>response.json());
   }
 }
